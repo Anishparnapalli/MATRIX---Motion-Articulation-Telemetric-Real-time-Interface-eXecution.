@@ -52,7 +52,7 @@ The system is split into three layers, each running on different hardware and co
 
 ## System Architecture
 
-![System Architecture](architecture.png)
+![System Architecture](images/architecture.png)
 
 ### Communication Protocol
 
