@@ -3,10 +3,9 @@
 
 > A Model-in-the-Loop Cyber-Physical System demonstrating real-time RTOS robotic arm control using QNX 8.0, visualised through a live Three.js web dashboard.
 
-![System Architecture](https://img.shields.io/badge/Platform-QNX%208.0-blue)
-![Language](https://img.shields.io/badge/Language-C%20%7C%20Python%20%7C%20JavaScript-green)
-![RTOS](https://img.shields.io/badge/Scheduling-SCHED__FIFO-orange)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+![Platform](https://img.shields.io/badge/Platform-QNX%208.0-blue)
+![Language](https://img.shields.io/badge/Language-C%20%7C%20Python%20%7C%20HTML%20%7C%20CSS%20%7C%20Java-green)
+![License](https://img.shields.io/badge/License-QNX-lightgrey)
 
 ---
 
