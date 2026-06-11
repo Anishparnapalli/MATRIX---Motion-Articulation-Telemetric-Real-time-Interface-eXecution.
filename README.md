@@ -54,39 +54,6 @@ The system is split into three layers, each running on different hardware and co
 
 ![System Architecture](architecture.png)
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                  QNX 8.0 RTOS Layer (VMware VM)                 │
-│                                                                  │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌────────────────┐  │
-│  │  Motion Task    │  │  Safety Task    │  │ Watchdog Task  │  │
-│  │  Priority 10    │  │  Priority 25    │  │  Priority 15   │  │
-│  │  100ms period   │  │  (Highest)      │  │  Deadline mon. │  │
-│  │  Sine-wave traj.│  │  Emergency stop │  │  100ms timeout │  │
-│  └────────┬────────┘  └────────┬────────┘  └────────────────┘  │
-│           │ CSV packets        │ EMERGENCY_STOP                  │
-│           └──────────┬─────────┘                                 │
-│                TCP :12345                                         │
-└──────────────────────┼──────────────────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────────────────┐
-│              Python Bridge Layer (Windows Host)                  │
-│                                                                  │
-│   TCP Server :12345  ←→  bridge.py  ←→  WebSocket Server :8765 │
-│   Parse CSV → JSON           ↕           Broadcast to browser   │
-│   Queue sequences          Bidirectional  Forward to QNX        │
-└──────────────────────┬──────────────────────────────────────────┘
-                       │  WebSocket ws://localhost:8765
-┌──────────────────────▼──────────────────────────────────────────┐
-│             Web Dashboard Layer (Browser)                        │
-│                                                                  │
-│   Three.js 3D Viewport │ Control Panel │ Teach & Record System  │
-│   5-DOF Arm Assembly   │ Joint Sliders │ Pose Capture & Replay  │
-│   Real-time Animation  │ RTOS/NON-RTOS │ Emergency Controls     │
-│   Gripper SVG Diagram  │ Live Telemetry│ OBJ Model Loader       │
-└─────────────────────────────────────────────────────────────────┘
-```
-
 ### Communication Protocol
 
 | Layer | Protocol | Address | Direction |
