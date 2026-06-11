@@ -180,6 +180,8 @@ pip install websockets
    ```
 6. Build the project (`Ctrl+B`). Confirm there are no errors.
 
+![Momentics Dashboard](images/QNXMomenticsSetup.png)
+
 ### Layer 2 — Python Bridge Server
 
 1. Clone or copy `python_bridge/bridge.py` onto your Windows host.
@@ -193,6 +195,7 @@ pip install websockets
    TCP_PORT = 12345       # QNX connects here
    WS_PORT  = 8765        # Browser connects here
    ```
+![Python Bridge](images/PythonBridgestartup.png)
 
 ### Layer 3 — Web Dashboard
 
@@ -200,6 +203,8 @@ pip install websockets
 2. Place all your `.OBJ` or `.STL` arm part files in the `models/` directory (or upload them via the dashboard UI at runtime).
 3. Install the **Live Server** extension if not already present.
 4. Right-click `MATRIX_QNX_dashboard.html` → **Open with Live Server**.
+
+![Main Control Center](images/MATRIXmaincenter.png)
 
 ---
 
