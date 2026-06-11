@@ -50,6 +50,10 @@ The system runs entirely on a standard laptop. No physical robotic hardware is r
 
 The system is split into three layers, each running on different hardware and communicating through well-defined interfaces:
 
+## System Architecture
+
+![System Architecture](architecture.png)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                  QNX 8.0 RTOS Layer (VMware VM)                 │
